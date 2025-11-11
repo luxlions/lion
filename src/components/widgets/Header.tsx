@@ -25,7 +25,6 @@ export default component$(() => {
 
   const isInitialized = useSignal(false);
   const location = useLocation();
-  const isHomeRoute = location.url.pathname === "/";
   
   // Audio player signals
   const audioElementSignal = useSignal<HTMLAudioElement | undefined>();
