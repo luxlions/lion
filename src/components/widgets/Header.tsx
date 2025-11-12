@@ -104,7 +104,7 @@ export default component$(() => {
                 src="/images/banner.png" 
                 alt="Banner" 
                 class={`
-                  md:hidden w-auto h-14 transition-all duration-500 ease-out
+                  md:hidden w-auto h-14 transition-all duration-300 ease-out
                   ${store.isScrolling
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-95"

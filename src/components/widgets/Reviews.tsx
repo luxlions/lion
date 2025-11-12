@@ -63,7 +63,7 @@ export default component$(() => {
           </div> */}
         </Carousel.Root>
       </Card.Root>
-      <div class="h-8 bg-[#70C7BA]"></div>
+      <div class="h-6 bg-[#70C7BA]"></div>
       </>
   );
 });
