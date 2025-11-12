@@ -36,6 +36,12 @@ export default component$(() => {
     store.isMobile = mediaQuery.matches;
     isInitialized.value = true;
     
+    // Initial scroll check
+    const initialScrollY = window.scrollY;
+    if (initialScrollY >= 10) {
+      store.isScrolling = true;
+    }
+    
     const handler = (e: MediaQueryListEvent) => {
       store.isMobile = e.matches;
     };
@@ -43,6 +49,27 @@ export default component$(() => {
 
     return () => {
       mediaQuery.removeEventListener("change", handler);
+    };
+  });
+
+  // Manual scroll listener (different approach for reliability)
+  useVisibleTask$(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (!store.isScrolling && scrollY >= 10) {
+        store.isScrolling = true;
+      } else if (store.isScrolling && scrollY < 10) {
+        store.isScrolling = false;
+      }
+    };
+
+    // Initial call
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   });
 
@@ -56,17 +83,24 @@ export default component$(() => {
         ? audioElementSignal.value?.pause()
         : audioElementSignal.value?.play();
     
-    audioPlayButtonSignal.value?.removeEventListener('click', play);
-    audioPlayButtonSignal.value?.addEventListener('click', play);
+    if (audioPlayButtonSignal.value) {
+      audioPlayButtonSignal.value.removeEventListener('click', play);
+      audioPlayButtonSignal.value.addEventListener('click', play);
+    }
     
-    return () =>
-      audioPlayButtonSignal.value?.removeEventListener('click', play);
+    return () => {
+      if (audioPlayButtonSignal.value) {
+        audioPlayButtonSignal.value.removeEventListener('click', play);
+      }
+    };
   });
 
   const menu: { items: MenuItem[] } = {
     items: [
       { text: "Story", href: "#" },
       { text: "Roadmap", href: "#" },
+            { text: "Rarity Guide", href: "#" },
+
       { text: "FAQ", href: "#" },
     ],
   };
@@ -94,28 +128,39 @@ export default component$(() => {
             : "bg-[#70C7BA]"
           }
         `}
-        window:onScroll$={() => {
-          const scrollY = window.scrollY;
-
-          if (!store.isScrolling && scrollY >= 10) {
-            store.isScrolling = true;
-          } else if (store.isScrolling && scrollY < 10) {
-            store.isScrolling = false;
-          }
-        }}
       >
         <div class="absolute inset-0" aria-hidden="true"></div>
         <div class="relative text-default py-0 md:p-1 px-0 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
-            <a class="flex items-center " href="/">
-                <div class="w-full">
-        <img 
-          src="/images/banner.png" 
-          alt="Banner" 
-          class=" h-14 object-cover"
-        />
-      </div>
-
+            <a class="flex items-center" href="/">
+              <div class="w-full h-14 relative overflow-hidden">
+                {/* Initial loader (brief flash before init) */}
+                {!isInitialized.value && (
+                  <img 
+                    src="/images/banner.png" 
+                    alt="Banner" 
+                    class="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+                {/* Animated logo */}
+                <div
+                  class={`
+                    absolute inset-0 w-full h-full transition-all duration-300 ease-in-out
+                    ${store.isMobile
+                      ? store.isScrolling
+                        ? "opacity-100 translate-x-0"
+                        : "opacity-0 translate-x-full"
+                      : "opacity-100 translate-x-0"
+                    }
+                  `}
+                >
+                  <img 
+                    src="/images/banner.png" 
+                    alt="Banner" 
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </a>
             <div class="flex items-center md:hidden gap-1">
               {/* Mobile Audio Button */}
@@ -221,7 +266,7 @@ export default component$(() => {
                                       after:bottom-[4px]
                                       after:left-1/2
                                       after:h-[2px]
-                                      after:bg--[#f29b10]
+                                      after:bg-[#f29b10]
                                       after:transition-all
                                       after:duration-200
                                       ${isDropdownActive
@@ -319,7 +364,7 @@ export default component$(() => {
                   <img
                     src="/images/sticker.webp"
                     alt="Jar Icon"
-        class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>

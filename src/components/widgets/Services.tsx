@@ -19,8 +19,11 @@ export default component$(() => {
 <Card.Root>
   <Card.Header>
     {/* <img src='' class="h-24 bg-primary"></img> */}
-    <Heading/>
-     <Tabs.Root class="-mt-3.5">
+  <Heading
+            subtitle="* For testing purposes only *"
+            
+            
+          />     <Tabs.Root class="-mt-3.5">
             <Tabs.List class="grid w-full grid-cols-4 text-xs">
               <Tabs.Tab data-value="0">
                 <div class="flex flex-col items-center">

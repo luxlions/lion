@@ -33,7 +33,7 @@ export default component$(() => {
   });
 
   return (
-      <div class="bg-[#f4b31d
+      <div class="bg-[#49EACB
 ]">
             <Card.Root class="p-0 md:p-8  max-w-6xl mx-auto">
 

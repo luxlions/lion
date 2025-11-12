@@ -12,7 +12,7 @@ export const Separator = component$<PropsOf<typeof HeadlessSeparator>>(
           orientation={orientation}
           class={cn(
             'shrink-0 bg-primary/10',
-            orientation === 'horizontal' ? 'h-px w-full' : 'h-full w-px',
+            orientation === 'horizontal' ? 'h-[2px] w-full' : 'h-full w-px',
             props.class,
           )}
         />

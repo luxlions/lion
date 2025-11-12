@@ -13,10 +13,11 @@ export default component$(() => {
   return (
     <>
     <Hero/>
-    {/* <Services/> */}
+               <Reviews/>
+
       <Process/>
+
     <Rarity/>
-      <Reviews/>
       <FAQTabs/>
       <Services/>
     </>

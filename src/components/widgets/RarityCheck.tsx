@@ -108,13 +108,13 @@ export default component$(() => {
   });
 
   return (
-    <div class="min-h-screen bg-gradient-to-br from-[#70C7BA] via-[#70C7BA]/30 to-[#70C7BA] p-4">
+    <div class="min-h-screen bg-gradient-to-br from-[#70C7BA] via-[#70C7BA] to-[#70C7BA] p-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-8 pt-8">
           <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">
             Rarity Guide
           </h1>
-          <p class="text-gray-400">Discover the rarity of your KasLord NFT</p>
+          {/* <p class="text-gray-400">Discover the rarity of your KasLord NFT</p> */}
         </div>
 
         {/* Search Section */}

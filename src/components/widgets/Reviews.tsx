@@ -8,7 +8,7 @@ import { Wrapper } from './Wrapper';
 export default component$(() => {
   useStyles$(styles);
 
-  const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink'];
+  const images = Array.from({ length: 10 }, (_, i) => `c${i + 1}.png`);
   const isPlaying = useSignal<boolean>(false);
   const slidesPerViewSig = useSignal(1.3); // Default to 1.3 for mobile
 
@@ -20,7 +20,7 @@ export default component$(() => {
       if (window.matchMedia('(min-width: 640px)').matches) {
         slidesPerViewSig.value = 2; // Larger screens
       } else {
-        slidesPerViewSig.value = 1; // Mobile
+        slidesPerViewSig.value = 2; // Mobile
       }
     };
 
@@ -32,37 +32,36 @@ export default component$(() => {
   });
 
   return (
-      <Wrapper>
-            <Card.Root class="p-4 md:p-8 pt-5 max-w-6xl mx-auto">
-            <Heading />
-    <Carousel.Root
-      class="carousel-root"
-      slidesPerView={slidesPerViewSig.value}
-      gap={30}
-      autoPlayIntervalMs={5500}
-      bind:autoplay={isPlaying}
-    >
-      <Carousel.Scroller class="carousel-scroller">
-        {colors.map((color) => (
-          <Carousel.Slide key={color} class=" ">
-            <Card.Root>
-          
-            <img src={`/images/kaslands.jpeg`} class=" w-full object-cover"/>
-            </Card.Root>
-          </Carousel.Slide>
-        ))}
-      </Carousel.Scroller>
-      <div class="flex justify-center items-center gap-4">
-        <Carousel.Pagination class="carousel-pagination">
-          {colors.map((color, index) => (
-            <Carousel.Bullet class="carousel-pagination-bullet" key={color}>
-              {index + 1}
-            </Carousel.Bullet>
-          ))}
-        </Carousel.Pagination>
-      </div>
-    </Carousel.Root>
-    </Card.Root>
-    </Wrapper>
+      <Card.Root class="p-1 md:p-8 bg-[#29b9b0] max-w-6xl mx-auto">
+        {/* <Heading /> */}
+      <Carousel.Root
+  class="carousel-root"
+  slidesPerView={slidesPerViewSig.value}
+  gap={4}
+  autoPlayIntervalMs={2500}
+  bind:autoplay={isPlaying}
+  draggable={true}
+  align="start"
+>
+          <Carousel.Scroller class="carousel-scroller">
+            {images.map((image) => (
+              <Carousel.Slide key={image} class="">
+                <Card.Root>
+                  <img src={`/images/${image}`} class="w-full object-cover" alt={`Slide ${image}`} />
+                </Card.Root>
+              </Carousel.Slide>
+            ))}
+          </Carousel.Scroller>
+          {/* <div class="flex justify-center items-center gap-4">
+            <Carousel.Pagination class="carousel-pagination">
+              {images.map((image, index) => (
+                <Carousel.Bullet class="carousel-pagination-bullet" key={image}>
+                  {index + 1}
+                </Carousel.Bullet>
+              ))}
+            </Carousel.Pagination>
+          </div> */}
+        </Carousel.Root>
+      </Card.Root>
   );
 });

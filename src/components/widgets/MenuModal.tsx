@@ -45,7 +45,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
               <>
                 <button
                   class={cn(
-                    "!text-xl font-medium text-gray-700 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
+                    "!text-2xl font-medium text-gray-700 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
                     isActive &&
                     "bg-primary-100 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
                     "hover:bg-primary-100 dark:hover:bg-primary-100/80 transition-all duration-200"
@@ -62,7 +62,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                 </button>
                 <div
                   class={cn(
-                    "text-xl text-muted-foreground transition-all duration-500 ease-in-out max-h-0 overflow-hidden",
+                    "text-2xl text-muted-foreground transition-all duration-500 ease-in-out max-h-0 overflow-hidden",
                     openIndex.value === index && "max-h-96"
                   )}
                 >
@@ -78,7 +78,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                           <a
                             href={subitem.href}
                             class={cn(
-                              "block text-gray-700 dark:text-gray-200 !text-xl p-3 pl-1 font-medium transition-all duration-200",
+                              "block text-gray-700 dark:text-gray-200 !text-2xl p-3 pl-1 font-medium transition-all duration-200",
                               isSubitemActive &&
                               "bg-primary-100 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
                               "hover:bg-primary-100 dark:hover:bg-primary-100/80"
@@ -97,7 +97,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
               <a
                 href={item.href}
                 class={cn(
-                  "block lg text-gray-700 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
+                  "block lg text-gray-700 !text-2xl !text-white dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
                   isActive &&
                   "bg-primary-300/50 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
                   "hover:bg-primary-100 dark:hover:bg-primary-100/80"
@@ -127,6 +127,9 @@ export default component$(() => {
 
     { title: "Roadmap", href: "/", badge: null },
     { title: "Token", href: "/", badge: null },
+        { title: "Rarity Guide", href: "/", badge: null },
+
+    
     { title: "FAQ", href: "/", badge: null },
 
   ];
@@ -171,7 +174,7 @@ export default component$(() => {
               <div class="flex-shrink-0">
                 <a
                   href="#"
-                  class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white  shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+                  class="w-full hover:bg-yellow-300 bg-[#e4b138] sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-2xl font-semibold text-white  shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
                   role="button"
                   aria-label="Book a workshop"
                 >
@@ -190,7 +193,7 @@ export default component$(() => {
                 <div class="flex-shrink-0">
                 <a
                   href="#"
-                  class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white  shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+                  class="w-full hover:bg-yellow-300 bg-[#b26122] sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-2xl font-semibold text-white  shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
                   role="button"
                   aria-label="Book a workshop"
                 >
