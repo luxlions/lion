@@ -67,6 +67,7 @@ export default component$(() => {
                 </a>
         </div>
       </div>
+      
     </section>
   );
 });

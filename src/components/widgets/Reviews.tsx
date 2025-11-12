@@ -31,6 +31,7 @@ export default component$(() => {
   });
 
   return (
+    <>
       <Card.Root class="p-1.5 md:p-8 bg-[#29b9b0] max-w-6xl mx-auto">
         {/* <Heading /> */}
       <Carousel.Root
@@ -62,5 +63,7 @@ export default component$(() => {
           </div> */}
         </Carousel.Root>
       </Card.Root>
+      <div class="h-8 bg-[#70C7BA]"></div>
+      </>
   );
 });

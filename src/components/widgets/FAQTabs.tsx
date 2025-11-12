@@ -22,10 +22,7 @@ export default component$(() => {
     question: "What is the 10% buy and burn mechanism?",
     answer: "Every Lion token purchase triggers a 10% buy and burn protocol, where 10% of the transaction value is used to repurchase and permanently burn LION tokens from the market. This deflationary mechanism reduces circulating supply over time, potentially increasing token scarcity and value for existing holders."
   },
-  {
-    question: "How can I mint or acquire Lux Lions NFTs?",
-    answer: "Minting for Lux Lions opens in phases on the Kaspa network. Early access is available via whitelist for community members, followed by a public sale. Use your Kaspa wallet to connect to our official minting site, where each NFT costs a set amount in KAS. Secondary trading will be live on Kaspa-compatible marketplaces post-mint."
-  },
+ 
   {
     question: "What utilities and benefits do holders receive?",
     answer: "Lux Lions holders gain access to exclusive perks, including airdrops of Lion tokens, VIP community governance, real-world merchandise drops, and collaborations with luxury brands. Staking your NFTs or tokens unlocks additional yields, while the collection supports charitable initiatives for wildlife conservation, aligning art with impact."

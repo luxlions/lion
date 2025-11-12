@@ -1,5 +1,6 @@
 import { component$, useStore, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
+import { LuTwitter, LuSend, LuVolume2 } from "@qwikest/icons/lucide";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
 
@@ -81,10 +82,10 @@ export default component$(() => {
         id="header"
         class={`
           sticky top-0 z-40 flex-none mx-auto max-w-7xl 
-          transition-all duration-300 ease-in-out  border-primary-500
+          transition-all duration-300 ease-in-out border-primary-500
           ${store.isScrolling
-            ? "bg-[#70C7BA] md:bg-primary-100/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-[#70C7BA]"
+            ? "bg-[#29b9b0] md:bg-primary-100/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
+            : "bg-[#29b9b0]"
           }
         `}
       >
@@ -111,16 +112,37 @@ export default component$(() => {
                 `}
               />
             </a>
-            <div class="flex items-center md:hidden gap-3">
-              {/* Mobile Audio Button: Matches MenuModal trigger style, increased gap for spacing */}
-              {/* <button
-                class="p-1 py-0 rounded-none border-2 backdrop-blur-sm transition-all duration-300 bg-[#70C7BA] border-white dark:border-primary-500 hover:shadow-xl hover:bg-white/45 z-50"
+            <div class="flex items-center md:hidden mr-14 gap-1">
+              {/* Mobile Social Icons - Twitter */}
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-1  backdrop-blur-sm transition-all duration-300 bg-[#29b9b0] border-white dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
+                aria-label="Twitter"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white dark:text-secondary-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <LuTwitter class="w-6 h-6 text-white dark:text-secondary-200" />
+              </a>
+              
+              {/* Mobile Social Icons - Telegram */}
+              <a
+                href="https://t.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-1.5 backdrop-blur-sm transition-all duration-300 bg-[#29b9b0] border-white dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
+                aria-label="Telegram"
+              >
+                <LuSend class="w-6 h-6 text-white dark:text-secondary-200" />
+              </a>
+              
+              {/* Mobile Audio Button */}
+              {/* <button
+                class="p-1.5 border-3 left-6 backdrop-blur-sm transition-all duration-300 bg-[#29b9b0] border-white dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
+                aria-label="Play Audio"
+              >
+                <LuVolume2 class="w-5 h-5 text-white dark:text-secondary-200" />
               </button> */}
+              
               <MenuModal />
             </div>
           </div>
@@ -143,7 +165,6 @@ export default component$(() => {
                               flex items-center
                               transition-all duration-200
                               relative
-                              rounded-base
                               after:content-['']
                               after:absolute
                               after:bottom-[6px]
@@ -176,7 +197,6 @@ export default component$(() => {
                               dropdown-menu
                               md:backdrop-blur-md
                               dark:md:bg-muted
-                              rounded-lg
                               md:absolute
                               pl-4 md:pl-0
                               md:hidden
@@ -257,7 +277,6 @@ export default component$(() => {
                             after:bg-[#f29b10]
                             after:transition-all
                             after:duration-200
-                            rounded-base
                             ${isActive
                               ? "text-[#f29b10] after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2"
                               : "after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
@@ -278,7 +297,7 @@ export default component$(() => {
             <div class="items-center flex mr-2 justify-between w-full md:w-auto gap-2">
               {/* Desktop Audio Button */}
               <button
-                class="p-2.5 bg-primary-500/80 hover:bg-primary-600/80 rounded-lg transition-all duration-200 group shadow-md hover:shadow-lg"
+                class="p-2.5 bg-primary-500/80 hover:bg-primary-600/80 transition-all duration-200 group shadow-md hover:shadow-lg"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -288,16 +307,16 @@ export default component$(() => {
               
               <a
                 href="#"
-                class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+                class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
                 role="button"
-                aria-label="Book a workshop"
+                aria-label="Mint NFT"
               >
                 <span class="relative z-10 flex items-center gap-1">
                   Mint LIONS
                   <img
                     src="/images/sticker.webp"
                     alt="Jar Icon"
-                    class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:scale-110 group-active:scale-100"
                   />
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
