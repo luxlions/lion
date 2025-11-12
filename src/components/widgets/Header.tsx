@@ -1,6 +1,6 @@
 import { component$, useStore, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
-import { LuTwitter, LuSend, LuVolume2 } from "@qwikest/icons/lucide";
+import { LuTwitter, LuSend } from "@qwikest/icons/lucide";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
 
