@@ -1,4 +1,4 @@
-import { component$, useSignal, useComputed$, useStyles$, useVisibleTask$, $ } from '@builder.io/qwik';
+import { component$, useSignal, useComputed$, useStyles$, useVisibleTask$, } from '@builder.io/qwik';
 import { Carousel } from '@qwik-ui/headless';
 import { cn } from '@qwik-ui/utils';
 import { Wrapper } from './Wrapper';
@@ -254,7 +254,7 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 md:p-8 pt-5 max-w-6xl border-2 bg-[#49EACB]/50 mx-auto">
+        <Card.Root class="p-4 md:p-8 pt-8 max-w-6xl border-2 bg-[#B6B6B6]/40 mx-auto">
           <Heading
             title="Roadmap"
             subtitle="Our process from start to finish."

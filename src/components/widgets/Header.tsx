@@ -15,9 +15,6 @@ interface SubMenuItem {
 }
 
 export default component$(() => {
-  // Audio settings - UPDATE THIS WITH YOUR AUDIO FILE PATH
-  const AUDIO_SRC = "/audio/background-music.mp3"; // Change to your audio file path
-  
   const store = useStore({
     isScrolling: false,
     isMobile: false,
@@ -25,11 +22,6 @@ export default component$(() => {
 
   const isInitialized = useSignal(false);
   const location = useLocation();
-  
-  // Audio player signals
-  const audioElementSignal = useSignal<HTMLAudioElement | undefined>();
-  const audioPlayButtonSignal = useSignal<HTMLButtonElement | undefined>();
-  const audioIsPlayingSignal = useSignal(false);
 
   useVisibleTask$(async () => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
@@ -73,50 +65,17 @@ export default component$(() => {
     };
   });
 
-  // Audio player setup - follows Qwik's iOS-compatible pattern
-  useVisibleTask$(({ track }) => {
-    track(() => audioPlayButtonSignal.value);
-    track(() => audioElementSignal.value);
-    
-    const play = () =>
-      audioIsPlayingSignal.value
-        ? audioElementSignal.value?.pause()
-        : audioElementSignal.value?.play();
-    
-    if (audioPlayButtonSignal.value) {
-      audioPlayButtonSignal.value.removeEventListener('click', play);
-      audioPlayButtonSignal.value.addEventListener('click', play);
-    }
-    
-    return () => {
-      if (audioPlayButtonSignal.value) {
-        audioPlayButtonSignal.value.removeEventListener('click', play);
-      }
-    };
-  });
-
   const menu: { items: MenuItem[] } = {
     items: [
       { text: "Story", href: "#" },
       { text: "Roadmap", href: "#" },
-            { text: "Rarity Guide", href: "#" },
-
+      { text: "Rarity Guide", href: "#" },
       { text: "FAQ", href: "#" },
     ],
   };
 
   return (
     <>
-      {/* Hidden audio element */}
-      <audio
-        ref={audioElementSignal}
-        src={AUDIO_SRC}
-        loop
-        onPlay$={() => (audioIsPlayingSignal.value = true)}
-        onPause$={() => (audioIsPlayingSignal.value = false)}
-        onEnded$={() => (audioIsPlayingSignal.value = false)}
-      />
-      
       {/* Header */}
       <header
         id="header"
@@ -129,57 +88,39 @@ export default component$(() => {
           }
         `}
       >
-        <div class="absolute inset-0" aria-hidden="true"></div>
         <div class="relative text-default py-0 md:p-1 px-0 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
-            <a class="flex items-center" href="/">
-              <div class="w-full h-14 relative overflow-hidden">
-                {/* Initial loader (brief flash before init) */}
-                {!isInitialized.value && (
-                  <img 
-                    src="/images/banner.png" 
-                    alt="Banner" 
-                    class="absolute inset-0 w-full h-full object-cover"
-                  />
-                )}
-                {/* Animated logo */}
-                <div
-                  class={`
-                    absolute inset-0 w-full h-full transition-all duration-300 ease-in-out
-                    ${store.isMobile
-                      ? store.isScrolling
-                        ? "opacity-100 translate-x-0"
-                        : "opacity-0 translate-x-full"
-                      : "opacity-100 translate-x-0"
-                    }
-                  `}
-                >
-                  <img 
-                    src="/images/banner.png" 
-                    alt="Banner" 
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+            <a class="flex items-center min-w-[120px] md:min-w-[200px]" href="/">
+              {/* Desktop Logo: Always visible, matches MenuModal style */}
+              <img 
+                src="/images/banner.png" 
+                alt="Banner" 
+                class="hidden md:block w-auto h-14"
+              />
+              
+              {/* Mobile Logo: Bubble mask-like fade-in (opacity + subtle scale for smooth bubble effect) */}
+              <img 
+                src="/images/banner.png" 
+                alt="Banner" 
+                class={`
+                  md:hidden w-auto h-14 transition-all duration-500 ease-out
+                  ${store.isScrolling
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-95"
+                  }
+                `}
+              />
             </a>
-            <div class="flex items-center md:hidden gap-1">
-              {/* Mobile Audio Button */}
-              <button
-                ref={audioPlayButtonSignal}
-                class="p-2 hover:bg-primary-600/30 rounded-lg transition-colors duration-200 group"
-                aria-label={audioIsPlayingSignal.value ? "Pause audio" : "Play audio"}
+            <div class="flex items-center md:hidden gap-3">
+              {/* Mobile Audio Button: Matches MenuModal trigger style, increased gap for spacing */}
+              {/* <button
+                class="p-1 py-0 rounded-none border-2 backdrop-blur-sm transition-all duration-300 bg-[#70C7BA] border-white dark:border-primary-500 hover:shadow-xl hover:bg-white/45 z-50"
               >
-                {audioIsPlayingSignal.value ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                )}
-              </button>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white dark:text-secondary-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </button> */}
               <MenuModal />
             </div>
           </div>
@@ -337,20 +278,12 @@ export default component$(() => {
             <div class="items-center flex mr-2 justify-between w-full md:w-auto gap-2">
               {/* Desktop Audio Button */}
               <button
-                ref={audioPlayButtonSignal}
                 class="p-2.5 bg-primary-500/80 hover:bg-primary-600/80 rounded-lg transition-all duration-200 group shadow-md hover:shadow-lg"
-                aria-label={audioIsPlayingSignal.value ? "Pause audio" : "Play audio"}
               >
-                {audioIsPlayingSignal.value ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                )}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </button>
               
               <a

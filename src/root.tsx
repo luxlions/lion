@@ -49,13 +49,9 @@ export default component$(() => {
   <link rel="preconnect" href="https://fonts.gstatic.com"  />
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
   {/* Load Della Respira normally */}
-  <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet" />
   <RouterHead />
   <ServiceWorkerRegister />
   {/* Image preloads with correct types */}
-  <link rel="preload" href="/images/logo22.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/images/hero.webm" as="video" type="video/webm" />
-  <link rel="preload" href="/images/logo2-cropped.svg" as="image" type="image/svg+xml" />
 </head>
       <body class="bg-white antialiased sm:hidden ">
         <ThemeProvider

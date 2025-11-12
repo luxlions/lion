@@ -2,8 +2,7 @@ import { component$, useStyles$, useSignal, useVisibleTask$ } from '@builder.io/
 import { Carousel } from '@qwik-ui/headless';
 import styles from './carousel.css?inline';
 import { Card } from '../ui/Card';
-import Heading from './Heading';
-import { Wrapper } from './Wrapper';
+
 
 export default component$(() => {
   useStyles$(styles);

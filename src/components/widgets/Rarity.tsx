@@ -1,15 +1,13 @@
 import { component$, useStyles$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
-import { Carousel } from '@qwik-ui/headless';
+
 import styles from './carousel.css?inline';
 import { Card } from '../ui/Card';
-import Heading from './Heading';
-import { Wrapper } from './Wrapper';
+
 import RarityCheck from './RarityCheck';
 
 export default component$(() => {
   useStyles$(styles);
 
-  const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink'];
   const isPlaying = useSignal<boolean>(false);
   const slidesPerViewSig = useSignal(1.3); // Default to 1.3 for mobile
 

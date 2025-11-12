@@ -75,6 +75,8 @@ module.exports = {
         base: 'var(--border-width)',
         DEFAULT: 'calc(var(--border-width) + 1px)',
         2: 'calc(var(--border-width) + 2px)',
+          3: 'calc(var(--border-width) + 3px)', // 👈 Added this line
+
         4: 'calc(var(--border-width) + 4px)',
         8: 'calc(var(--border-width) + 8px)',
       },

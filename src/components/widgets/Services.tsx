@@ -5,7 +5,6 @@ import { Wrapper } from './Wrapper';
 import styles from './carousel.css?inline';
 import Custom from './Custom';
 import { Card } from '../ui/Card';
-import Heading from './Heading';
 import { Tabs } from '../ui/Tabs';
 
 export default component$(() => {
@@ -19,11 +18,7 @@ export default component$(() => {
 <Card.Root>
   <Card.Header>
     {/* <img src='' class="h-24 bg-primary"></img> */}
-  <Heading
-            subtitle="* For testing purposes only *"
-            
-            
-          />     <Tabs.Root class="-mt-3.5">
+   <Tabs.Root class="-mt-3.5">
             <Tabs.List class="grid w-full grid-cols-4 text-xs">
               <Tabs.Tab data-value="0">
                 <div class="flex flex-col items-center">

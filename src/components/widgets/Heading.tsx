@@ -1,11 +1,11 @@
 import { component$ } from '@builder.io/qwik';
 import { Separator } from '../ui/Separator';
-import type { JSXNode } from '@builder.io/qwik';
+import type { JSXOutput } from '@builder.io/qwik';
 
 interface HeadingProps {
   title: string;
-  subtitle: string;
-  icon?: JSXNode;
+  subtitle?: string;  // Made optional with ?
+  icon?: JSXOutput;
 }
 
 export default component$<HeadingProps>(({ title, subtitle, icon }) => {
@@ -18,7 +18,9 @@ export default component$<HeadingProps>(({ title, subtitle, icon }) => {
               {title}
             </h4>
           </div>
-          <p class="text-md md:text-lg ml-3 pb-1 text-muted-foreground">{subtitle}</p>
+          {subtitle && (  // Only render if subtitle exists
+            <p class="text-md md:text-lg ml-3 pb-1 text-muted-foreground">{subtitle}</p>
+          )}
         </div>
 
         {icon && (
