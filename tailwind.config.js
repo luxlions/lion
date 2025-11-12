@@ -4,8 +4,8 @@ const plugin = require('tailwindcss/plugin');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    join(__dirname, 'src/**/*.{js,ts,jsx,tsx,mdx,qwik,qwik.tsx}'), // Simplified and included all relevant extensions
-    join(__dirname, 'src/global.css'), // Explicitly include global.css
+    join(__dirname, 'src/**/*.{js,ts,jsx,tsx,mdx,qwik,qwik.tsx}'),
+    join(__dirname, 'src/global.css'),
     join(__dirname, '../website/src/**/*.{js,ts,jsx,tsx,mdx}'),
     join(__dirname, '../../packages/kit-styled/src/**/*.{js,ts,jsx,tsx,mdx}'),
     join(__dirname, '../../packages/kit-headless/src/**/*.{js,ts,jsx,tsx,mdx}'),
@@ -60,23 +60,24 @@ module.exports = {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
+        'lux-green': '#70C7BA', // Added your custom green color
       },
       borderRadius: {
-        base: 'var(--border-radius)',
-        sm: 'calc(var(--border-radius) + 0.125rem)',
-        DEFAULT: 'calc(var(--border-radius) + 0.25rem)',
-        md: 'calc(var(--border-radius) + 0.375rem)',
-        lg: 'calc(var(--border-radius) + 0.5rem)',
-        xl: 'calc(var(--border-radius) + 0.75rem)',
-        '2xl': 'calc(var(--border-radius) + 1rem)',
-        '3xl': 'calc(var(--border-radius) + 1.5rem)',
+        base: '0',
+        sm: '0',
+        DEFAULT: '0',
+        md: '0',
+        lg: '0',
+        xl: '0',
+        '2xl': '0',
+        '3xl': '0',
+        none: '0',
       },
       borderWidth: {
         base: 'var(--border-width)',
         DEFAULT: 'calc(var(--border-width) + 1px)',
         2: 'calc(var(--border-width) + 2px)',
-          3: 'calc(var(--border-width) + 3px)', // 👈 Added this line
-
+        3: 'calc(var(--border-width) + 3px)',
         4: 'calc(var(--border-width) + 4px)',
         8: 'calc(var(--border-width) + 8px)',
       },
