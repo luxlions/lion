@@ -42,7 +42,7 @@ export default component$(() => {
                   role="button"
                   aria-label="Mint NFT"
                 >
-                  <span class="relative px-2 z-10 text-4xl flex items-center gap-1">
+                  <span class="relative px-1 z-10 text-4xl flex items-center gap-1">
                     MINT
                     <img
                       src="/images/logo.png"
