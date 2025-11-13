@@ -33,7 +33,8 @@ export default component$(() => {
             />
           ))}
         </div> */}
-        <p class="pt-8 px-1 text-white text-4xl text-center"> Lorem ipsum dolor sit amet consect etur adipis icing elit et Illo voluptati accus. </p>
+        <p class="pt-8 px-1 text-white text-4xl text-center"> A pixel art NFT collection of the Crypto Kingdom, ruled by royalty. Embodying power, precision, and innovation.
+ </p>
         {/* Action Buttons */}
         <div class="flex gap-6 px-2 flex-wrap justify-center py-8 pb-10">
         <a

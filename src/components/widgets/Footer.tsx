@@ -96,7 +96,7 @@ export default component$(() => {
                 </ul> */}
               </div>
 
-              <div class="text-lg text-gray-200 mb-4 mt-2 dark:text-gray-400">
+              <div class="text-xl text-gray-200 mb-4 mt-2 dark:text-gray-400">
 Lorem ipsum dolor sit amet consectetur adipisicing elit et Illo voluptatibus accusamus.               </div>
             </div>
           </div>
@@ -106,11 +106,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit et Illo voluptatibus acc
             <div key={index} class="col-span-6 md:col-span-3 lg:col-span-2">
               <div class="text-white dark:text-gray-300 font-bold mb-2">{title}</div>
               {Array.isArray(items) && items.length > 0 && (
-                <ul class="text-md">
+                <ul class="text-lg">
                   {items.map(({ title, href }, index2) => (
                     <li key={index2} class="mb-2">
                       <Link
-                        class="!text-lg text-gray-300 hover:text-teal-400 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                        class="!text-xl text-gray-300 hover:text-teal-400 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
                         href={href}
                       >
                         {title}
@@ -147,7 +147,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit et Illo voluptatibus acc
         </div>
 
         <div class="md:flex md:items-center dark:border-gray-700 md:justify-between pb-6 pt-0 md:pb-8">
-          <div class="!text-sm text-gray-200 mr-4 dark:text-slate-400">
+          <div class="!text-md text-gray-200 mr-4 dark:text-slate-400">
             © {new Date().getFullYear()} Lux Lions 
           </div>
         </div>
