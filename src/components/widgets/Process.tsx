@@ -158,7 +158,7 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-3 md:p-16 pt-8 max-w-7xl border-2 bg-[#49EACB]/70 mx-auto">
+        <Card.Root class="p-2 pl-5 md:p-16 pt-8 max-w-7xl border-2 bg-[#49EACB]/70 mx-auto">
           <Heading
             title="Roadmap"
             // subtitle="Our process from start to finish."
