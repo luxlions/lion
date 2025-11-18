@@ -50,7 +50,7 @@ export default component$(() => {
             <Heading
               title="FAQ"
               icon={
-                <p class="text-4xl">?</p>
+                <p class="text-4xl text-black">?</p>
               }
             />
             </div>

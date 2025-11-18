@@ -36,7 +36,7 @@ export default component$(() => {
           <Heading
             title="Story"
             icon={
-              <LuBookOpen class="-mt-4 w-8 h-8 text-[#70C7BA]" />
+              <LuBookOpen class="-mt-4 w-8 h-8 text-black" />
             }
           />
 

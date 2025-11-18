@@ -115,7 +115,7 @@ export default component$(() => {
             <div class="flex items-center md:hidden mr-14 gap-1">
               {/* Mobile Social Icons - Twitter */}
               <a
-                href="https://twitter.com"
+                href="https://x.com/LuxLionsKas"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="p-1  backdrop-blur-sm transition-all duration-300 bg-[#29b9b0] border-white dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
@@ -126,7 +126,7 @@ export default component$(() => {
 
               {/* Mobile Social Icons - Telegram */}
               <a
-                href="https://t.me"
+                href="t.me/LuxLionsKas"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="p-1.5 backdrop-blur-sm transition-all duration-300 bg-[#29b9b0] border-white dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
