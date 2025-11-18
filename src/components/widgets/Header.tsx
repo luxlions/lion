@@ -84,7 +84,7 @@ export default component$(() => {
           sticky top-0 z-40 flex-none mx-auto max-w-7xl
           transition-all duration-100 ease-in-out border-primary-500 border-b-[#70C7BA] 
           ${store.isScrolling
-            ? "bg-[#29b9b0] md:bg-primary-100/80 border-b-8 md:border-b-8 dark:bg-primary-900/80 md:backdrop-blur-sm"
+            ? "bg-[#29b9b0] md:bg-primary-100/80 md:border-b-8 dark:bg-primary-900/80 md:backdrop-blur-sm"
             : "bg-[#29b9b0]"
           }
         `}
