@@ -43,9 +43,9 @@ export default component$(() => {
 
   return (
     <footer class="bg-[#70C7BA] bg-cover bg-center border-gray-300 dark:border-slate-700">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <div class="grid grid-cols-12 gap-4 gap-y-4 sm:gap-8 pt-8 pb-6 md:pt-12 md:pb-4">
-          <div class="col-span-12 lg:col-span-5 pr-4">
+          <div class="col-span-12 lg:col-span-6 pr-4">
             <div class="flex flex-col">
               <div class="flex flex-row items-center justify-between mb-2 md:mb-2">
                 <img
@@ -96,21 +96,22 @@ export default component$(() => {
                 </ul> */}
               </div>
 
-              <div class="text-xl md:text-2xl text-gray-200 mb-4 mt-2 dark:text-gray-400">
-Lorem ipsum dolor sit amet consectetur adipisicing elit et Illo voluptatibus accusamus.               </div>
+              <div class="text-xl md:text-2xl text-white mb-4 mt-2 dark:text-gray-400">
+                A pixel art NFT collection of the Crypto Kingdom, ruled by royalty. Embodying power, precision, and innovation.
+              </div>
             </div>
           </div>
 
           {/* Sitemap links */}
           {links.map(({ title, items }, index) => (
-            <div key={index} class="col-span-6 md:col-span-3 lg:col-span-2">
-              <div class="text-white dark:text-gray-300 font-bold mb-2 text-lg md:text-xl">{title}</div>
+            <div key={index} class="col-span-6 md:col-span-5 lg:col-span-2">
+              <div class="text-white dark:text-gray-300 font-bold mb-2 text-lg md:text-2xl">{title}</div>
               {Array.isArray(items) && items.length > 0 && (
                 <ul class="text-lg">
                   {items.map(({ title, href }, index2) => (
                     <li key={index2} class="mb-2">
                       <Link
-                        class="!text-xl md:!text-2xl text-gray-300 hover:text-teal-400 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                        class="!text-xl md:!text-3xl text-white hover:text-teal-400 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
                         href={href}
                       >
                         {title}
@@ -122,32 +123,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit et Illo voluptatibus acc
             </div>
           ))}
 
-          {/* Buttons with order-first on mobile */}
-          <div class="col-span-12 flex hidden flex-col w-full md:w-3/5 md:pl-0 px-4 sm:flex-row gap-3 pb-8 order-first sm:order-none">
-            <a
-              href="https://www.kaspa.com/nft/collections/KasKritter"
-              class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
-            >
-              <LuStar class="w-6 h-6 group-hover:text-teal-400" />
-              Mint OG Mice
-            </a>
-            <a
-              href="https://www.kaspa.com/nft/collections/BullzBearz"
-              class="bg-teal-400 text-white text-xl px-3 py-3 rounded-lg hover:bg-white hover:text-teal-400 transition-colors flex items-center justify-center gap-2 flex-1"
-            >
-              <LuStar class="w-6 h-6 group-hover:text-teal-400" /> Mint Bullz vs Bearz
-            </a>
-            <a
-              href="https://t.me/KasKritterzOfficial"
-              class="bg-blue-300 text-white text-xl px-3 py-3 rounded-lg hover:bg-white hover:text-blue-300 transition-colors flex items-center justify-center gap-2 flex-1"
-            >
-              <LuUsers class="w-6 h-6 group-hover:text-blue-300" /> Join Community
-            </a>
-          </div>
+      
         </div>
 
         <div class="md:flex md:items-center dark:border-gray-700 md:justify-between pb-6 pt-0 md:pb-8">
-          <div class="!text-md md:!text-lg text-gray-200 mr-4 dark:text-slate-400">
+          <div class="!text-md md:!text-xl text-gray-200 mr-4 dark:text-slate-400">
             © {new Date().getFullYear()} Lux Lions
           </div>
         </div>

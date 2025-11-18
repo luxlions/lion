@@ -96,14 +96,14 @@ export default component$(() => {
   const roadmapPhases = [
     {
       headline: 'Phase 1:',
-      title: '$LION Deployment on Kasplex',
+      title: 'Deploy $LION on Kasplex',
       icon: '🦁',
       description: '$LION officially launched on Kasplex, establishing the foundation of the Lux Lions ecosystem.',
       milestones: [],
     },
     {
       headline: 'Phase 2:',
-      title: '$LUXLIONS Deployment on KaspaCom',
+      title: ' Deploy $LUXLIONS on KaspaCom',
       icon: '🎨',
       description: 'The Lux Lions NFT collection goes live on KaspaCom, opening minting to the public.',
       milestones: [],
@@ -158,10 +158,10 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 md:p-16 pt-8 max-w-7xl border-2 bg-[#49EACB]/70 mx-auto">
+        <Card.Root class="p-3 md:p-16 pt-8 max-w-7xl border-2 bg-[#49EACB]/70 mx-auto">
           <Heading
             title="Roadmap"
-            subtitle="Our process from start to finish."
+            // subtitle="Our process from start to finish."
             icon={
               <svg fill="#70C7BA " class="-mt-4 " height="32px" width="32px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -192,7 +192,7 @@ export default component$(() => {
             }
           />
           <Carousel.Root
-            class="carousel-root pr-3"
+            class="carousel-root"
             gap={30}
             bind:selectedIndex={selectedIndex}
             autoPlayIntervalMs={3000}
@@ -247,20 +247,20 @@ export default component$(() => {
                       >
                         <span
                           class={cn(
-                            '!text-xl md:text-3xl font-medium px-3 py-1',
+                            'text-[0.9375rem] md:text-3xl font-medium px-1.5 md:px-3 py-1 whitespace-nowrap',
                             selectedIndex.value === index ? 'bg-lux-green text-white' : 'bg-transparent'
                           )}
                         >
-                          <span class="bg-white/40 py-1 pl-2 -ml-2 mr-1.5"> {phase.headline} </span>
+                          <span class="bg-white/40 py-1 pl-1.5 md:pl-2 -ml-1.5 md:-ml-2 mr-1 md:mr-1.5"> {phase.headline} </span>
                           {phase.title}
-                          <span class="ml-1">{phase.icon}</span>
+                          <span class="ml-0.5 md:ml-1">{phase.icon}</span>
                         </span>
                       </Carousel.Step>
                       <Carousel.Slide
                         class="p-2 md:p-3 !mt-2 bg-lux-green/10 shadow-sm transition-opacity duration-300"
                         key={`slide-${index}`}
                       >
-                        <p class="mb-0 text-lg md:text-2xl leading-snug">{phase.description}</p>
+                        <p class="mb-0 text-md md:text-2xl leading-snug">{phase.description}</p>
                         {phase.milestones && phase.milestones.length > 0 && (
                           <ul class="list-disc list-outside pl-5 space-y-1 mt-2">
                             {phase.milestones.map((milestone, i) => (

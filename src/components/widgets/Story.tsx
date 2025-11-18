@@ -1,4 +1,5 @@
 import { component$ } from '@builder.io/qwik';
+import { LuBookOpen } from '@qwikest/icons/lucide';
 import { Card } from '../ui/Card';
 import Heading from './Heading';
 
@@ -10,9 +11,7 @@ export default component$(() => {
           <Heading
             title="Story"
             icon={
-              <svg class="-mt-4" height="32px" width="32px" fill="#70C7BA" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-              </svg>
+              <LuBookOpen class="-mt-4 w-8 h-8 text-[#70C7BA]" />
             }
           />
 

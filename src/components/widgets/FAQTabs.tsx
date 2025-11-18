@@ -50,7 +50,7 @@ export default component$(() => {
                 <p class="text-4xl">?</p>
               }
             />
-            <Card.Content class="space-y-2 p-1 pb-4">
+            <Card.Content class="space-y-2 p-1 pb-1">
               <FAQAccordion faqs={faqs} />
             </Card.Content>
           </Card.Root>

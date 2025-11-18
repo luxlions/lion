@@ -5,7 +5,6 @@ import Process from "~/components/widgets/Process";
 import FAQTabs from "~/components/widgets/FAQTabs";
 import Hero from "~/components/widgets/Hero";
 import Story from "~/components/widgets/Story";
-import Rarity from "~/components/widgets/Rarity";
 
 
 export default component$(() => {
@@ -21,9 +20,7 @@ export default component$(() => {
         <Process/>
       </div>
 
-      <div id="rarity">
-        <Rarity/>
-      </div>
+     
 
       <div id="faq">
         <FAQTabs/>

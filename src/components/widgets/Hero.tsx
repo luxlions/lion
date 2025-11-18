@@ -1,6 +1,5 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import Reviews from "~/components/widgets/Reviews";
-import Story from "./Story";
 
 export default component$(() => {
   const currentCharacter = useSignal(1);
