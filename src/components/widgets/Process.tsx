@@ -159,7 +159,7 @@ export default component$(() => {
     <>
 
    
-        <Card.Root class="p-2 pl-5 md:p-20 pt-8 max-w-7xl border-2 bg-gradient-to-br from-[#70C7BA] via-[#49EACB] to-[#70C7BA] mx-auto">
+        <Card.Root class="p-2 pl-5 md:p-20 pt-8 max-w-7xl border-2 bg-gradient-to-br from-[#70C7BA]/75 via-[#49EACB]/75 to-[#70C7BA]/75 mx-auto">
           <div class="md:px-4 md:pt-2">
             <Heading
             title="Roadmap"

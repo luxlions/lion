@@ -62,7 +62,7 @@ export default component$(() => {
             role="button"
             aria-label="Get $LION token"
           >
-            <span class="relative z-10 flex text-4xl items-center gap-1">
+            <span class="relative z-10 flex text-3xl items-center gap-1">
               Join Community
             </span>
             <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
