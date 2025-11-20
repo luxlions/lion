@@ -18,13 +18,13 @@ export default component$<FAQAccordionProps>(({ faqs }) => {
         <Accordion.Root class="w-full">
           {faqs.slice(0, Math.ceil(faqs.length / 2)).map((faq, index) => (
             <Accordion.Item key={index}>
-              <Accordion.Trigger 
+              <Accordion.Trigger
                 header={index === 0 ? "h2" : undefined}
-                class="text-left"
+                class="text-left text-white"
               >
                 {faq.question}
               </Accordion.Trigger>
-              <Accordion.Content>
+              <Accordion.Content class="text-white">
                 {faq.answer}
               </Accordion.Content>
             </Accordion.Item>
@@ -33,13 +33,13 @@ export default component$<FAQAccordionProps>(({ faqs }) => {
         <Accordion.Root class="w-full">
           {faqs.slice(Math.ceil(faqs.length / 2)).map((faq, index) => (
             <Accordion.Item key={index + Math.ceil(faqs.length / 2)}>
-              <Accordion.Trigger 
+              <Accordion.Trigger
                 header={index === 0 ? "h2" : undefined}
-                class="text-left"
+                class="text-left text-white"
               >
                 {faq.question}
               </Accordion.Trigger>
-              <Accordion.Content>
+              <Accordion.Content class="text-white">
                 {faq.answer}
               </Accordion.Content>
             </Accordion.Item>

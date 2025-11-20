@@ -36,7 +36,7 @@ export default component$(() => {
 
   return (
     <>
-      <Card.Root class="p-3 md:p-8 bg-[#29b9b0] ">
+      <Card.Root class="p-3 md:py-8 md:px-16 bg-[#29b9b0] ">
         {/* <Heading /> */}
       <Carousel.Root
   class="carousel-root"

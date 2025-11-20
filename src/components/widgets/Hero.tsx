@@ -20,10 +20,10 @@ export default component$(() => {
       <img
         src="/images/banner.png"
         alt="Banner"
-        class=" md:h-55 h-30 md:mx-20 md:mx-auto -mt-2 md:-mt-6 "
+        class=" md:h-55 h-30 md:px-40 md:mx-20 px-5 md:mx-auto -mt-2 md:-mt-6 "
       />
       </div>
-      <p class="pt-8 px-3 md:px-24 text-white text-4xl text-center"> A pixel art NFT collection of the Crypto Kingdom, ruled by royalty. Embodying power, precision, and innovation.
+      <p class="pt-8 px-3 md:px-24 text-white  text-3xl md:text-4xl text-center"> A pixel art NFT collection of the Crypto Kingdom, ruled by royalty. Embodying power, precision, and innovation.
       </p>
           <div class="flex gap-6 px-2 flex-wrap justify-center py-8 pb-10">
           <a
@@ -32,7 +32,7 @@ export default component$(() => {
             role="button"
             aria-label="Mint NFT"
           >
-            <span class="relative z-10 text-4xl flex items-center gap-1">
+            <span class="relative z-10 text-3xl flex items-center gap-1">
               MINT
               <img
                 src="/images/logo.png"
@@ -49,7 +49,7 @@ export default component$(() => {
             role="button"
             aria-label="Get $LION token"
           >
-            <span class="relative z-10 flex text-4xl items-center gap-1">
+            <span class="relative z-10 flex text-3xl items-center gap-1">
               Get $LION
             </span>
             <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>

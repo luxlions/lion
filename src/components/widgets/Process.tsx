@@ -1,7 +1,6 @@
 import { component$, useSignal, useComputed$, useStyles$, useVisibleTask$, } from '@builder.io/qwik';
 import { Carousel } from '@qwik-ui/headless';
 import { cn } from '@qwik-ui/utils';
-import { Wrapper } from './Wrapper';
 import Heading from './Heading';
 
 import styles from './carousel.css?inline';
@@ -158,10 +157,9 @@ export default component$(() => {
 
   return (
     <>
-    <div class="md:p-8 stars">
 
    
-        <Card.Root class="p-2 pl-5 md:p-16 pt-8 max-w-7xl border-2 bg-gradient-to-br from-[#70C7BA] via-[#49EACB] to-[#70C7BA] mx-auto">
+        <Card.Root class="p-2 pl-5 md:p-20 pt-8 max-w-7xl border-2 bg-gradient-to-br from-[#70C7BA] via-[#49EACB] to-[#70C7BA] mx-auto">
           <div class="md:px-4 md:pt-2">
             <Heading
             title="Roadmap"
@@ -289,7 +287,6 @@ export default component$(() => {
             </div>
           </Carousel.Root>
         </Card.Root>
-         </div>
       
     </>
   );

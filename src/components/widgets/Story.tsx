@@ -37,7 +37,7 @@ export default component$(() => {
             <Heading
               title="Story"
               icon={
-                <LuBookOpen class="-mt-4 w-8 h-8 text-white" />
+                <LuBookOpen class=" w-8 h-8 text-white" />
               }
             />
           </div>
@@ -71,8 +71,8 @@ export default component$(() => {
               </Carousel.Scroller>
 
               {/* Carousel Counter */}
-              <div class="flex justify-center items-center mt-6">
-                <span class="text-white/60 text-sm font-medium">
+              <div class="flex justify-center items-center">
+                <span class="text-white/80 text-md font-medium">
                   {selectedIndex.value + 1}/3
                 </span>
               </div>

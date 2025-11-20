@@ -34,7 +34,7 @@ const Trigger = component$<
         )}
       >
         <Slot />
-        <LuChevronDown class="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+        <LuChevronDown class="h-4 w-4 shrink-0 text-white transition-transform duration-200" />
       </HeadlessAccordion.Trigger>
     </HeadlessAccordion.Header>
   );
