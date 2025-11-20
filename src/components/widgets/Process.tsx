@@ -158,13 +158,16 @@ export default component$(() => {
 
   return (
     <>
-      <Wrapper>
-        <Card.Root class="p-2 pl-5 md:p-16 pt-8 max-w-7xl border-2 bg-gradient-to-br from-[#70C7BA] to-[#29b9b0] mx-auto">
-          <Heading
+    <div class="md:p-8 stars">
+
+   
+        <Card.Root class="p-2 pl-5 md:p-16 pt-8 max-w-7xl border-2 bg-gradient-to-br from-[#70C7BA] via-[#49EACB] to-[#70C7BA] mx-auto">
+          <div class="md:px-4 md:pt-2">
+            <Heading
             title="Roadmap"
             // subtitle="Our process from start to finish."
             icon={
-              <svg fill=" " class="-mt-4 text-black " height="32px" width="32px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve">
+              <svg fill="white " class="-mt-4 text-black " height="32px" width="32px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -192,6 +195,7 @@ export default component$(() => {
               </svg>
             }
           />
+          </div>
           <Carousel.Root
             class="carousel-root"
             gap={30}
@@ -200,13 +204,6 @@ export default component$(() => {
             bind:autoplay={isPlaying}
           >
             <div class="flex flex-row gap-5 w-full">
-              <div class="w-1/3 hidden md:block aspect-square overflow-hidden rounded-lg border-2 border-white/40 shadow-lg">
-                <img
-                  src={roadmapPhases[selectedIndex.value].image}
-                  alt={roadmapPhases[selectedIndex.value].title}
-                  class="w-full h-full object-cover"
-                />
-              </div>
               <div class="flex flex-row items-start w-full md:flex-1">
                 {/* Vertical progress line */}
                 <div class="flex flex-col items-center justify-start w-2 mr-3">
@@ -267,11 +264,11 @@ export default component$(() => {
                         class="p-2 md:p-3 !mt-2 bg-white/50 mr-2 md:mr-4 shadow-sm transition-opacity duration-300 border border-white/30"
                         key={`slide-${index}`}
                       >
-                        <p class="mb-0 text-base md:text-xl leading-snug text-gray-900">{phase.description}</p>
+                        <p class="mb-0 text-lg md:text-2xl leading-snug text-gray-900">{phase.description}</p>
                         {phase.milestones && phase.milestones.length > 0 && (
                           <ul class="list-disc list-outside pl-5 space-y-1 mt-2">
                             {phase.milestones.map((milestone, i) => (
-                              <li key={`milestone-${i}`} class="text-base md:text-xl leading-relaxed text-gray-900">
+                              <li key={`milestone-${i}`} class="text-lg md:text-2xl leading-relaxed text-gray-900">
                                 {milestone}
                               </li>
                             ))}
@@ -282,10 +279,17 @@ export default component$(() => {
                   ))}
                 </Carousel.Stepper>
               </div>
+              <div class="w-1/3 hidden md:block aspect-square overflow-hidden rounded-lg border-2 border-white/40 shadow-lg">
+                <img
+                  src={roadmapPhases[selectedIndex.value].image}
+                  alt={roadmapPhases[selectedIndex.value].title}
+                  class="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </Carousel.Root>
         </Card.Root>
-      </Wrapper>
+         </div>
       
     </>
   );
